@@ -1,7 +1,7 @@
 //Copyright Jason McKee 2017.  All rights reserved.
 var width = 16;
 var widthpx = 480;
-var borderWidth = 1;
+var borderWidth = 0;
 
 function setup(width, widthpx, borderWidth) {
   for (var i = 0; i < width; i++ ) {
@@ -17,29 +17,27 @@ function setup(width, widthpx, borderWidth) {
         $(blockID).css('height',unitWidth +'px');
         $(blockID).css('width',unitWidth +'px');
 
-        if (j === 0) {
           $(blockID).css('float','left');
-        }
 
-        else  {
-          $(blockID).css('float', 'right');
-        }
     }
   }
+  $(".unit-block").hover( function() {
+    $(this).css('background-color',"#000000")
+  });
 }
+
 $(document).ready(function() {
 
   setup(width,widthpx, borderWidth);
 
-  $(".unit-block").hover( function() {
-    $(this).css('background-color',"#000000")
-  });
+
 
 
   $("#reset-button").on('click', function() {
     var newWidth = prompt('Please enter the width you would like', width);
     width = newWidth;
-
+    $('#container').empty();
+    setup(width,widthpx, borderWidth);
   });
 
 });
