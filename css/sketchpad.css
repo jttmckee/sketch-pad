@@ -2,7 +2,7 @@
 #container{
   height: 480px;
   width: 480px;
-  margin-left: auto;
+  margin-left: 20px;
   margin-right: auto;
   float:left;
 }
